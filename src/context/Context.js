@@ -2,7 +2,7 @@ import React, { useEffect, useState, createContext } from 'react';
 
 export const TrainContext = createContext();
 const ContextProvider = props => {
-   const [currentText, setCurrentText] = useState();
+   const [currentText, setCurrentText] = useState(`ror`);
    const [currentValidText, setCurrentValidText] = useState('');
    const [currentSign, setCurrentSign] = useState();
    const [currentBCCurrentSign, setCurrentBCCurrentSign] = useState(true);
@@ -17,7 +17,7 @@ const ContextProvider = props => {
    const [pushStart, setPushStart] = useState(false);
    const [restart, setRestart] = useState(false);
 
-   useEffect(()=>{
+   useEffect(() => {
       fetch(`https://baconipsum.com/api/?type=all-meat&paras=1&start-with-lorem=1`)
          .then(res => res.json())
          .then(data => setCurrentText(data.toString()))

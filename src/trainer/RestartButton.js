@@ -24,7 +24,7 @@ function RestartButton() {
     setFinish(false);
     setCurrentSpeed(0);
     setCurrentAccuracy(0);
-    setCurrentValidText();
+    setCurrentValidText('');
     setCurrentSign();
     setCurrentBCCurrentSign(true);
     setCurrentSignBCVisible(false);
