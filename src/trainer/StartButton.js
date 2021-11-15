@@ -18,9 +18,8 @@ function StartButton() {
       setCurrentSignBCVisible(true);
       setSignsSum(Number(currentText.length));
       setstartTime(performance.now());
-      console.log(startTime);
       setCurrentSign(currentText.slice(0, 1));
-       setCurrentText(currentText.slice(1));
+      setCurrentText(currentText.slice(1));
 
 
     }

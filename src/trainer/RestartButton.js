@@ -19,7 +19,6 @@ function RestartButton() {
   } = useContext(TrainContext);
 
   function restartTrain() {
-    console.log("again");
     setRestart(!restart);
     setFinish(false);
     setCurrentSpeed(0);
