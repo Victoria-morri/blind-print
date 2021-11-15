@@ -2,7 +2,7 @@ import React, { useEffect, useState, createContext } from 'react';
 
 export const TrainContext = createContext();
 const ContextProvider = props => {
-   const [currentText, setCurrentText] = useState(`ror`);
+   const [currentText, setCurrentText] = useState(``);
    const [currentValidText, setCurrentValidText] = useState('');
    const [currentSign, setCurrentSign] = useState();
    const [currentBCCurrentSign, setCurrentBCCurrentSign] = useState(true);
