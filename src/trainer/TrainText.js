@@ -24,7 +24,7 @@ function TrainText() {
   function controlTyping(evt) {
 		if (!finish) {
 			if (start) {
-				if (!/[A-z?,. !0-9]/.test(evt.key)) {
+				if (!/[A-z?,. -:;!0-9]/.test(evt.key)) {
 					alert('Пожалуйста, смени раскладку клавиатуры на Английский.');
 				} else {
 						if ((currentSign === evt.shiftKey && evt.key) || currentSign === evt.key) {
