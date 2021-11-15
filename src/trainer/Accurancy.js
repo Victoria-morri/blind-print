@@ -22,7 +22,7 @@ function Accurancy() {
       />
       <div className="d-flex justify-content-between align-items-center text-primary fs-3 fw-bolder">
         <span id="certificateAccuracy" className="fs-2">
-          {currentAccuracy}{" "}
+          {currentAccuracy}
         </span>
       &nbsp; %
       </div>

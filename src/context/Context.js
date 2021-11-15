@@ -7,7 +7,7 @@ const ContextProvider = props => {
    const [currentSign, setCurrentSign] = useState();
    const [currentBCCurrentSign, setCurrentBCCurrentSign] = useState(true);
    const [currentSignBCVisible, setCurrentSignBCVisible] = useState(false);
-   const [currentAccuracy, setCurrentAccuracy] = useState(100);
+   const [currentAccuracy, setCurrentAccuracy] = useState(100.00);
    const [currentSpeed, setCurrentSpeed] = useState(0);
    const [startTime, setstartTime] = useState();
    const [quantityInvalidSigns, setQuantityInvalidSigns] = useState(0);
@@ -15,12 +15,13 @@ const ContextProvider = props => {
    const [start, setStart] = useState(false);
    const [finish, setFinish] = useState(false);
    const [pushStart, setPushStart] = useState(false);
+   const [restart, setRestart] = useState(false);
 
    useEffect(()=>{
       fetch(`https://baconipsum.com/api/?type=all-meat&paras=1&start-with-lorem=1`)
          .then(res => res.json())
          .then(data => setCurrentText(data.toString()))
-   }, [])
+   }, [restart])
 
    return (
       <TrainContext.Provider
@@ -37,7 +38,8 @@ const ContextProvider = props => {
             currentText, setCurrentText,
             currentSign, setCurrentSign,
             startTime, setstartTime,
-            quantityInvalidSigns, setQuantityInvalidSigns
+            quantityInvalidSigns, setQuantityInvalidSigns,
+            restart, setRestart
          }}>
          { props.children}
       </TrainContext.Provider>

@@ -3,6 +3,7 @@ import { TrainContext } from "../context/Context";
 import Accurancy from "./Accurancy";
 import CurrentSpeed from "./CurrentSpeed";
 import StartButton from "./StartButton";
+import RestartButton from "./RestartButton";
 import TrainText from "./TrainText";
 
 function Trainer() {
@@ -22,8 +23,11 @@ function Trainer() {
       if (pushStart) {
         function calcSpeed() {
           const time2 = performance.now();
+          // eslint-disable-next-line
           const allTime = +(time2 - startTime) / 1000;
+          // eslint-disable-next-line
           const quantityValidSighs = Number(currentValidText.length);
+          // eslint-disable-next-line
           const speed = Math.round((quantityValidSighs / allTime) * 60);
           setCurrentSpeed(speed);
         }
@@ -31,6 +35,7 @@ function Trainer() {
         function calcAccurancy() {
           const accyransy = (100 - quantityInvalidSigns / (+signsSum / 100))
             .toFixed(2);
+          // eslint-disable-next-line
           setCurrentAccuracy(accyransy);
         }
         calcSpeed();
@@ -55,8 +60,9 @@ function Trainer() {
     return (
       <div className="d-flex flex-column flex-md-row flex-lg-row justify-content-between flex-wrap col-11 m-3">
         <TrainText/>
-			  <div className="d-flex flex-column col-xs-12 col-md-4 col-xl-3">
-					<StartButton/>
+        <div className="d-flex flex-column col-xs-12 col-md-4 col-xl-3">
+          <StartButton />
+          <RestartButton/>
 					<CurrentSpeed/>
 				  <Accurancy/>
 				</div>

@@ -12,7 +12,7 @@ function StartButton() {
     start, setStart
   } = useContext(TrainContext);
 
-  function startTest(d) {
+  function startTest() {
     if (!start) {
       setStart(true);
       setCurrentSignBCVisible(true);
@@ -21,17 +21,19 @@ function StartButton() {
       console.log(startTime);
       setCurrentSign(currentText.slice(0, 1));
        setCurrentText(currentText.slice(1));
-       const text = document.getElementById('text');
-       text.focus();
+
+
     }
     setPushStart(!pushStart);
+    const text = document.getElementById('text');
+    text.focus();
   }
 
 
   return (
     <button
     className="btn btn-primary col-12 fs-3"
-    onClick={(evt) => startTest(evt)}
+    onClick={() => startTest()}
     >
       {pushStart ? "Stop" : "Start"}
     </button>
